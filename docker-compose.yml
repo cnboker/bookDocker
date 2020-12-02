@@ -25,7 +25,7 @@ services:
       - "3306"
     command: --init-file /data/application/nideshop.sql
     volumes:
-      - ./nideshop.sql:/data/application/nideshop.sql
+      - .nideshop/nideshop.sql:/data/application/nideshop.sql
       - /opt/mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_USER: root
