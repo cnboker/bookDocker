@@ -1,0 +1,20 @@
+version: "1.0"
+services:
+  webapi:
+    build: ./nideshop
+    ports:
+      - "8000:8360"
+    depends_on:
+      - db
+    volumes:
+      - /opt/www/static:/usr/src/nideshop/www/static
+  book:
+    build: ./book
+    ports:
+      - "8080:3000"
+    depends_on: 
+      -db
+    volumes:
+      - /opt/www/static:/usr/src/nideshop/www/static
+  db:
+    build: ./db

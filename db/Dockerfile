@@ -1,0 +1,16 @@
+image: mysql:5.7
+    ports:
+      - "3306:3306"
+    expose:
+      # Opens port 3306 on the container
+      - "3306"
+    command: --init-file /data/application/nideshop.sql
+    volumes:
+      - ./nideshop.sql:/data/application/nideshop.sql
+      - /opt/mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: szsong100
+      MYSQL_DATABASE: nideshop
+      MYSQL_USER: root
+      MYSQL_PASSWORD: szsong100
